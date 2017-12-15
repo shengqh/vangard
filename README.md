@@ -1,1 +1,1 @@
-# vangard
+Configuration files for VANGARD
