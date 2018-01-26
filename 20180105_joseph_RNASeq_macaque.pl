@@ -70,21 +70,26 @@ my $def = {
   },
 
   groups => {
-    "Control" => [ "CTR_33215_F", "CTR_33316_M", "CTR_33657_F", "CTR_33401_F", "CTR_33573_M" ],
+    "Control"     => [ "CTR_33215_F", "CTR_33316_M", "CTR_33657_F", "CTR_33401_F", "CTR_33573_M" ],
     "HighFatDiet" => [ "HFD_33499_M", "HFD_33512_M", "HFD_33337_F", "HFD_33500_F" ],
   },
 
   pairs => {
+    "HighFatDiet_vs_Control_gender" => {
+      groups => [ "Control", "HighFatDiet" ],
+      gender => [ "Female",  "Male", "Female", "Female", "Male", "Male", "Male", "Female", "Female" ]
+    },
     "HighFatDiet_vs_Control" => {
-      groups => [ "Control",    "HighFatDiet" ],
-      gender => [ "Female", "Male", "Female", "Female", "Male", "Male", "Male", "Female", "Female" ]
+      groups => [ "Control", "HighFatDiet" ],
     }
   },
   DE_fold_change     => 1.5,
   perform_multiqc    => 1,
   perform_webgestalt => 0,
+  perform_report => 1,
 };
 
-performRNASeq_ensembl_Mmul1($def);
+my $config = performRNASeq_ensembl_Mmul1($def, 0);
+performTask($config, "report");
 
 1;
