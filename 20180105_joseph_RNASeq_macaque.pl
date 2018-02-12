@@ -22,6 +22,9 @@ my $def = {
   #cqs in house software which will be used to generate count table. https://github.com/shengqh/CQS.Tools/
   cqstools => "/home/shengq2/cqstools/cqstools.exe",
 
+  merge_fastq => 1,
+  is_pairend  => 1,
+
   perform_cutadapt => 0,
   cutadapt_option  => "-O 1",
   adapter          => "AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC",    #trueseq adapter
@@ -33,39 +36,111 @@ my $def = {
   files => {
     "CTR_33215_F" => [
       "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s5_1_GSLv3-7_28_SL281210.fastq.gz",
-      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s5_2_GSLv3-7_28_SL281210.fastq.gz"
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s5_2_GSLv3-7_28_SL281210.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s6_1_GSLv3-7_28_SL281210.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s6_2_GSLv3-7_28_SL281210.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s7_1_GSLv3-7_28_SL281210.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s7_2_GSLv3-7_28_SL281210.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s8_1_GSLv3-7_28_SL281210.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s8_2_GSLv3-7_28_SL281210.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CC0HLANXX_s7_1_GSLv3-7_28_SL281210.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CC0HLANXX_s7_2_GSLv3-7_28_SL281210.fastq.gz"
     ],
     "CTR_33316_M" => [
       "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s5_1_GSLv3-7_29_SL281211.fastq.gz",
-      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s5_2_GSLv3-7_29_SL281211.fastq.gz"
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s5_2_GSLv3-7_29_SL281211.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s6_1_GSLv3-7_29_SL281211.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s6_2_GSLv3-7_29_SL281211.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s7_1_GSLv3-7_29_SL281211.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s7_2_GSLv3-7_29_SL281211.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s8_1_GSLv3-7_29_SL281211.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s8_2_GSLv3-7_29_SL281211.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CC0HLANXX_s7_1_GSLv3-7_29_SL281211.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CC0HLANXX_s7_2_GSLv3-7_29_SL281211.fastq.gz"
     ],
     "HFD_33499_M" => [
       "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s5_1_GSLv3-7_30_SL281212.fastq.gz",
-      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s5_2_GSLv3-7_30_SL281212.fastq.gz"
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s5_2_GSLv3-7_30_SL281212.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s6_1_GSLv3-7_30_SL281212.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s6_2_GSLv3-7_30_SL281212.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s7_1_GSLv3-7_30_SL281212.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s7_2_GSLv3-7_30_SL281212.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s8_1_GSLv3-7_30_SL281212.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s8_2_GSLv3-7_30_SL281212.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CC0HLANXX_s7_1_GSLv3-7_30_SL281212.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CC0HLANXX_s7_2_GSLv3-7_30_SL281212.fastq.gz"
     ],
     "HFD_33512_M" => [
       "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s5_1_GSLv3-7_31_SL281213.fastq.gz",
-      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s5_2_GSLv3-7_31_SL281213.fastq.gz"
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s5_2_GSLv3-7_31_SL281213.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s6_1_GSLv3-7_31_SL281213.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s6_2_GSLv3-7_31_SL281213.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s7_1_GSLv3-7_31_SL281213.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s7_2_GSLv3-7_31_SL281213.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s8_1_GSLv3-7_31_SL281213.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s8_2_GSLv3-7_31_SL281213.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CC0HLANXX_s7_1_GSLv3-7_31_SL281213.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CC0HLANXX_s7_2_GSLv3-7_31_SL281213.fastq.gz"
     ],
     "CTR_33657_F" => [
       "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s5_1_GSLv3-7_32_SL281214.fastq.gz",
-      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s5_2_GSLv3-7_32_SL281214.fastq.gz"
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s5_2_GSLv3-7_32_SL281214.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s6_1_GSLv3-7_32_SL281214.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s6_2_GSLv3-7_32_SL281214.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s7_1_GSLv3-7_32_SL281214.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s7_2_GSLv3-7_32_SL281214.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s8_1_GSLv3-7_32_SL281214.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s8_2_GSLv3-7_32_SL281214.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CC0HLANXX_s7_1_GSLv3-7_32_SL281214.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CC0HLANXX_s7_2_GSLv3-7_32_SL281214.fastq.gz"
     ],
     "CTR_33401_F" => [
       "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s5_1_GSLv3-7_33_SL281215.fastq.gz",
-      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s5_2_GSLv3-7_33_SL281215.fastq.gz"
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s5_2_GSLv3-7_33_SL281215.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s6_1_GSLv3-7_33_SL281215.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s6_2_GSLv3-7_33_SL281215.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s7_1_GSLv3-7_33_SL281215.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s7_2_GSLv3-7_33_SL281215.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s8_1_GSLv3-7_33_SL281215.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s8_2_GSLv3-7_33_SL281215.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CC0HLANXX_s7_1_GSLv3-7_33_SL281215.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CC0HLANXX_s7_2_GSLv3-7_33_SL281215.fastq.gz"
     ],
     "HFD_33337_F" => [
       "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s5_1_GSLv3-7_34_SL281216.fastq.gz",
-      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s5_2_GSLv3-7_34_SL281216.fastq.gz"
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s5_2_GSLv3-7_34_SL281216.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s6_1_GSLv3-7_34_SL281216.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s6_2_GSLv3-7_34_SL281216.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s7_1_GSLv3-7_34_SL281216.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s7_2_GSLv3-7_34_SL281216.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s8_1_GSLv3-7_34_SL281216.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s8_2_GSLv3-7_34_SL281216.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CC0HLANXX_s7_1_GSLv3-7_34_SL281216.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CC0HLANXX_s7_2_GSLv3-7_34_SL281216.fastq.gz"
     ],
     "HFD_33500_F" => [
       "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s5_1_GSLv3-7_35_SL281217.fastq.gz",
-      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s5_2_GSLv3-7_35_SL281217.fastq.gz"
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s5_2_GSLv3-7_35_SL281217.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s6_1_GSLv3-7_35_SL281217.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s6_2_GSLv3-7_35_SL281217.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s7_1_GSLv3-7_35_SL281217.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s7_2_GSLv3-7_35_SL281217.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s8_1_GSLv3-7_35_SL281217.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s8_2_GSLv3-7_35_SL281217.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CC0HLANXX_s7_1_GSLv3-7_35_SL281217.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CC0HLANXX_s7_2_GSLv3-7_35_SL281217.fastq.gz"
     ],
     "CTR_33573_M" => [
       "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s5_1_GSLv3-7_36_SL281218.fastq.gz",
-      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s5_2_GSLv3-7_36_SL281218.fastq.gz"
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s5_2_GSLv3-7_36_SL281218.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s6_1_GSLv3-7_36_SL281218.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s6_2_GSLv3-7_36_SL281218.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s7_1_GSLv3-7_36_SL281218.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s7_2_GSLv3-7_36_SL281218.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s8_1_GSLv3-7_36_SL281218.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CBU7TANXX_s8_2_GSLv3-7_36_SL281218.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CC0HLANXX_s7_1_GSLv3-7_36_SL281218.fastq.gz",
+      "/gpfs23/scratch/VANGARD/20180105_joseph_RNASeq_macaque/fastq/CC0HLANXX_s7_2_GSLv3-7_36_SL281218.fastq.gz"
     ],
   },
 
@@ -86,10 +161,10 @@ my $def = {
   DE_fold_change     => 1.5,
   perform_multiqc    => 1,
   perform_webgestalt => 0,
-  perform_report => 1,
+  perform_report     => 1,
 };
 
-my $config = performRNASeq_ensembl_Mmul1($def, 0);
-performTask($config, "report");
+my $config = performRNASeq_ensembl_Mmul1( $def, 1 );
+#performTask( $config, "report" );
 
 1;
